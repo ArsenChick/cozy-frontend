@@ -1,1 +1,18 @@
-<p>upload works!</p>
+<h3>Upload</h3>
+
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">
+      Video Title
+    </label>
+    <input type="text" formControlName="title">
+  </div>
+
+  <div>
+    <label for="file">
+      Video File
+    </label>
+    <input type="text" formControlName="file">
+    </div>
+  <button class="button" type="submit">Upload</button>
+</form>

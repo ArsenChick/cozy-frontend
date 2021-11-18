@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss']
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent {
 
-  constructor() { }
+  uploadForm = this.formBuilder.group({
+    title: '',
+    videolink: ''
+  });
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) { }
+
+  onSubmit(): void {
+    console.warn('Your video has been uploaded', this.uploadForm.value);
   }
-
 }

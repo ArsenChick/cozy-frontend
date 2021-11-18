@@ -1,1 +1,15 @@
-<p>gallery works!</p>
+<div *ngFor="let video of videos">
+
+    <p>
+      {{ video.thumbnail }} {{ video.duration }}
+    </p>
+  
+    <h3>
+      <a
+        [title]="video.title"
+        [routerLink]="['/watch', video.id]" >
+        {{ video.title }}
+      </a>
+    </h3>
+    
+  </div>
