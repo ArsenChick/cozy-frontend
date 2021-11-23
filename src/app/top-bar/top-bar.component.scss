@@ -1,0 +1,67 @@
+@import "../../values.scss";
+//@import "../../fonts.scss";
+
+/* Верхняя панель */
+#topbar {
+  /* Позиционирование */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Сетка */
+  display: grid;
+  grid-template-columns: 240px minmax(0, 3fr) 1fr;
+  grid-template-rows: 70px 70px;
+  height: 70px;
+  margin: 20px 40px;
+  padding: 5px 10px;
+
+  /* Типографика */
+  text-align: center;
+
+  /* Оформление */
+  overflow: hidden;
+  color: $logoTextColor;
+  background-color: $navColor;
+  border-radius: 3px;
+  opacity: 1;
+}
+
+.grid-item {
+  text-align: center;
+  height: 60px;
+  //border: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+
+h1 {
+  font-size: 30px;
+}
+
+#logoText {
+  font-size: 50px;
+  position: relative;
+  right: -8px;
+  z-index: 100;
+  color: $logoTextColor;
+  text-shadow: $logoTextBorderColor 0 0 6px;
+}
+
+#logoTextBorder {
+  position: relative;
+  left: -90px;
+  font-size: 50px;
+  color: $logoTextBorderColor;
+}
+
+.logo {
+
+  div {
+    float: left;
+    display: flex;
+  }
+}
