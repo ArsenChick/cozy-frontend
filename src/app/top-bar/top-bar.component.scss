@@ -13,7 +13,7 @@
 
   /* Сетка */
   display: grid;
-  grid-template-columns: 240px minmax(0, 3fr) 1fr;
+  grid-template-columns: 300px minmax(0, 3fr) 1fr;
   grid-template-rows: 70px 70px;
   height: 70px;
   margin: 20px 40px;
@@ -45,17 +45,13 @@ h1 {
 #logoText {
   font-size: 50px;
   position: relative;
-  right: -8px;
   z-index: 100;
   color: $logoTextColor;
-  text-shadow: $logoTextBorderColor 0 0 6px;
-}
-
-#logoTextBorder {
-  position: relative;
-  left: -90px;
-  font-size: 50px;
-  color: $logoTextBorderColor;
+  text-shadow: $logoTextBorderColor 1px 1px 0,
+               $logoTextBorderColor -1px -1px 0,
+               $logoTextBorderColor -1px 1px 0,
+               $logoTextBorderColor 1px -1px 0,
+      $logoTextBorderColor 0 0 4px;
 }
 
 .logo {
