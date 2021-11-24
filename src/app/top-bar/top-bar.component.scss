@@ -3,14 +3,22 @@
 
 /* Верхняя панель */
 nav {
-  //overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 1;
+  z-index: 100;
+
+    align-items: center;
+
   margin: 20px 40px;
   height: 70px;
+  overflow: hidden;
   color: $logoTextColor;
   background: $navColor;
-  opacity: 1;
-
-  align-items: center;
 
   /*
   font-size: 11pt;
@@ -19,8 +27,12 @@ nav {
   */
   //position: relative;
   border-bottom: 3px solid #9e90ba;
-  border-radius: 3px;
-}  
+  border-radius: 6px;
+}
+
+h1 {
+  font-size: 30px;
+}
 
 ul {
   margin: 0;
@@ -33,6 +45,7 @@ li {
   display: inline;
   float: left;
   border-right: 1px solid #bbb;
+
 
   a {
     display: block;
@@ -50,10 +63,6 @@ li {
   }
 }
 
-h1 {
-  font-size: 30px;
-}
-
 #logoText {
   font-size: 50px;
   position: relative;
@@ -63,18 +72,15 @@ h1 {
                $logoTextBorderColor -1px -1px 0,
                $logoTextBorderColor -1px 1px 0,
                $logoTextBorderColor 1px -1px 0,
-      $logoTextBorderColor 0 0 4px;
-}
-
-hr {
-  position: relative;
-  top: -120px;
-  width: 80%;
-  border: 2px solid $navColor;
+               $logoTextBorderColor 0 0 4px;
 }
 
 .button {
   display: flex;
-  margin: 20% 10px;
+  margin: 25% 10px;
   align-items: center;
+}
+
+.empty-space {
+  padding: 55px;
 }
