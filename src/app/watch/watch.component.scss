@@ -1,0 +1,22 @@
+@import "../../values.scss";
+
+.video-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin: 0 40px;
+  padding: 20px;
+  background: $contentBoxColor;
+  border-radius: 6px;
+
+  .video-info {
+  }
+
+  .video-player {
+    height: 260px;
+    width: 450px;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    background: $videoFrameColor;
+  }
+}
+
