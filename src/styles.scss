@@ -1,9 +1,24 @@
 @import "nullstyle.scss";
 @import "values.scss";
 
+body {
+  background-color: $background;
+}
+
 .button {
-  background-color: $buttonColor;
+  background-color: #9e90ba;
   border-radius: 3px;
   padding: 7px 10px;
   text-align: center;
+
+  &+a {
+    display: block;
+    padding: 8px;
+    //background-color: #dddddd;
+  }
+
+  a:hover {
+    background-color: #c5aed3;
+  }
 }
+

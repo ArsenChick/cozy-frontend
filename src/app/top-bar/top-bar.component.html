@@ -1,21 +1,19 @@
-<div id="topbar">
-  <div class="grid_item">
-		<div class="logo">
+<nav id="topbar">
+	<ul>
+		<li>
 			<a [routerLink]="['/']">
-				<div>
-					<img src="../../assets/img/Cozy_logo_orng.svg" height="50" width="50" alt="Cozy logo" title="logo">
-				</div>
-				<div>
-					<h1 id="logoText">Cozy</h1>
-				</div>
+				<img src="../../assets/img/Cozy_logo_orng.svg" height="50" width="50" alt="Cozy logo" title="logo">
 			</a>
-		</div>
-	</div>
-	<div class="grid_item">
-	</div>
-  <div class="grid_item">
-	  <a routerLink="/upload" class="button fancy-button">
-			Upload
-	  </a>
-  </div>
-</div>
+		</li>
+		<li>
+			<a [routerLink]="['/']">
+				<h1 id="logoText">Cozy</h1>
+			</a>
+		</li>
+		<li style="float:right">
+			<a routerLink="/upload" class="button fancy-button active">
+				Upload
+			</a>
+		<li>
+	</ul>
+</nav>
