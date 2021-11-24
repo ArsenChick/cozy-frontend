@@ -1,0 +1,17 @@
+@import "../../values.scss";
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  //grid-template-columns: 1fr;
+
+  margin: 0 40px;
+  background: $contentBoxColor;
+}
+
+.video {
+  text-align: center;
+  border: 2px dashed rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin: 30px;
+}

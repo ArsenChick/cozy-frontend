@@ -1,15 +1,14 @@
-<div *ngFor="let video of videos">
-
+<div class="grid-gallery">
+  <div *ngFor="let video of videos" class="video">
     <p>
       {{ video.thumbnail }} {{ video.duration }}
     </p>
-  
+
     <h3>
-      <a
-        [title]="video.title"
-        [routerLink]="['/watch', video.id]" >
+      <a [title]="video.title"
+         [routerLink]="['/watch', video.id]">
         {{ video.title }}
       </a>
     </h3>
-    
   </div>
+</div>
