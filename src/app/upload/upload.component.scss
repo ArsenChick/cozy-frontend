@@ -1,0 +1,59 @@
+@import "../../values.scss";
+
+.wrapper {
+  margin: 0 40px;
+  padding: 20px;
+  background: $contentBoxColor;
+  border-radius: 6px;
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 40px;
+
+
+  .info-chapter {
+    text-align: center;
+    margin: 30px;
+  }
+
+  input {
+    border-radius: 3px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $navColor;
+}
+
+li {
+  display: inline;
+  float: left;
+  border-right: 1px solid #bbb;
+
+
+  a {
+    display: block;
+    padding: 8px;
+    //background-color: #dddddd;
+  }
+
+  a:hover {
+    background-color: #c5aed3;
+  }
+
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+h2 {
+  font-size: 24px;
+}

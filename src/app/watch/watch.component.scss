@@ -1,13 +1,9 @@
 @import "../../values.scss";
 
-.video-page {
+.video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px;
-  margin: 0 40px;
-  padding: 20px;
-  background: $contentBoxColor;
-  border-radius: 6px;
+  grid-gap: 30px;
 
   .video-info {
   }
