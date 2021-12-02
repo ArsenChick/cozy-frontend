@@ -1,15 +1,14 @@
 <div *ngFor="let video of videos">
 
-    <p>
-      {{ video.thumbnail }} {{ video.duration }}
-    </p>
-  
-    <h3>
-      <a
-        [title]="video.title"
-        [routerLink]="['/watch', video.id]" >
-        {{ video.title }}
-      </a>
-    </h3>
-    
-  </div>
+  <p>
+    Thumbnail pic for {{ video.video }}<br>
+    Length {{ video.length }}
+  </p>
+
+  <h3>
+    <a [title]="video.name" [routerLink]="['/watch', video.video]">
+      {{ video.name }}
+    </a>
+  </h3>
+
+</div>

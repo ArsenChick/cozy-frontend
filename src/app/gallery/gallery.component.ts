@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { videos } from '../videos';
+import { GalleryService, GalleryVideo } from './gallery.service';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent {
-  videos = videos;
+export class GalleryComponent implements OnInit {
+
+  videos: GalleryVideo[] | undefined;
+
+  constructor(private galleryService: GalleryService) {}
+
+  ngOnInit(): void {
+    this.galleryService.getVideos()
+      .subscribe(
+        (data: any) => {
+          this.videos = data;
+          console.log(this.videos);
+        }
+      );
+  }
 }
