@@ -10,6 +10,7 @@ import { WatchComponent } from './watch/watch.component';
 import { UploadComponent } from './upload/upload.component';
 
 import { GalleryService } from './gallery/gallery.service';
+import { WatchService } from './watch/watch.service';
 
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatIconModule,
   ],
-  providers: [GalleryService],
+  providers: [GalleryService, WatchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

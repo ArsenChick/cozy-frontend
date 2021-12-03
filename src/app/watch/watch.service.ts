@@ -1,25 +1,32 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-export interface GalleryVideo {
+export interface Video2 {
   name: string;
   length: number;
   video: string;
 }
 
 @Injectable()
-export class GalleryService {
+export class WatchService implements OnInit{
 
-  galleryVideosUrl = 'http://localhost:3000';
+  watchVideosUrl = 'http://localhost:3000/';
+  userAgent: string | undefined;
 
   constructor(private http: HttpClient) { }
 
-  getVideos() {
-    return this.http.get<GalleryVideo[]>(this.galleryVideosUrl)
+  ngOnInit(): void {
+    const userAgent = window.navigator.userAgent;
+    this.userAgent = userAgent;
+    console.log(this.userAgent);
+  }
+
+  getVideos(videoID: string) {
+    return this.http.get<Video2[]>(this.watchVideosUrl)
     .pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error

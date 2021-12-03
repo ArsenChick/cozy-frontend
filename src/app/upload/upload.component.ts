@@ -16,7 +16,10 @@ export class UploadComponent {
     videofile: ''
   });
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+    ) { }
 
   onFileSelected(event: any) {
 

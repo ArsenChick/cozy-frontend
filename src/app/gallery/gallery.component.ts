@@ -16,7 +16,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.galleryService.getVideos()
       .subscribe(
-        (data: any) => {
+        (data: GalleryVideo[]) => {
           this.videos = data;
           console.log(this.videos);
         }
