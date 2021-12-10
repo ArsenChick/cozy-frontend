@@ -18,6 +18,9 @@ body {
   border-radius: 3px;
   padding: 7px 10px;
   text-align: center;
+  &:hover {
+    background-color: #c5aed3;
+  }
 }
 
 h1 {

@@ -11,12 +11,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 40px;
+  grid-gap: 10px;
 
 
   .info-chapter {
     text-align: center;
-    margin: 30px;
   }
 
   input {
@@ -29,14 +28,10 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: $navColor;
 }
 
 li {
-  display: inline;
-  float: left;
-  border-right: 1px solid #bbb;
-
+  margin: 8px;
 
   a {
     display: block;
@@ -52,8 +47,19 @@ li {
   &:last-child {
     border-right: none;
   }
+
+  label {
+    margin-right: 10px;
+  }
+
+  input {
+    margin-right: 10px;
+  }
 }
 
 h2 {
+  text-align: center;
   font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

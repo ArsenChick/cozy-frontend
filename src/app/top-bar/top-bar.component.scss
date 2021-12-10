@@ -41,19 +41,13 @@ ul {
 li {
   display: inline;
   float: left;
-  border-right: 1px solid #bbb;
-
+  //border-right: 1px solid #bbb;
 
   a {
     display: block;
     padding: 8px;
     //background-color: #dddddd;
   }
-
-  a:hover {
-    background-color: #c5aed3;
-  }
-
 
   &:last-child {
     border-right: none;
@@ -81,3 +75,4 @@ li {
 .empty-space {
   padding: 55px;
 }
+

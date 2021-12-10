@@ -1,6 +1,5 @@
 <div class="wrapper">
-<h2>Upload form</h2>
-
+<h2>Upload form</h2>  
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div class="upload-grid">
     <ul class="info-chapter">
@@ -13,25 +12,17 @@
         <input type="text" formControlName="author">
       </li>
     </ul>
-
     <ul class="info-chapter">
       <li>
         <label for="file">Video File</label>
         <input type="text" formControlName="file">
-      </li>
-      <li>
         <button class="button" type="submit">Upload</button>
       </li>
       <li>
         <label for="url">Output URL</label>
         <input type="text" formControlName="url">
       </li>
-      <li>
-        <label for="duration">Video Duration</label>
-        <input type="text" formControlName="duration">
-      </li>
     </ul>
-
     <ul class="info-chapter">
       <li>
         <button class="button" type="submit">Send</button>
