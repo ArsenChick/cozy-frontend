@@ -16,8 +16,12 @@ body {
   color: $buttonFontColor;
   background: #9e90ba;
   border-radius: 3px;
-  padding: 7px 10px;
+  padding: 6px 20px;
   text-align: center;
+  outline: none;
+  transition: 0.25s;
+  cursor: pointer;
+  text-transform: capitalize;
   &:hover {
     background-color: #c5aed3;
   }

@@ -6,25 +6,60 @@
   background: $contentBoxColor;
   border-radius: 6px;
 }
+.upload-box {
+  width: 400px;
+  padding: 20px;
+  position: relative;
+  top: 40%;
+  left: 40%;
+  transform: (-50%, -50%);
+  background: $contentBoxColor;
+  text-align: center;
 
-.upload-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
+  input[type = "text"] {
+    width: 240px;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10px auto;
+    padding: 3px 5px;
+    text-align: left;
+    border: 2px solid #9e90ba;
+    border-radius: 4px;
+    outline: none;
+    color: $fieldTextColor;
+    transition: 0.25s;
 
-
-  .info-chapter {
-    text-align: center;
+    &:focus {
+      width: 300px;
+      border-color: #c79fc7;
+    }
   }
 
-  input {
-    border-radius: 3px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: $uploadTitlesColor;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  label {
+    color: #755975;
+    text-transform: capitalize;
+    font-size: 16px;
   }
 }
 
-ul {
+.info-chapter {
+  margin: 20px 0;
+}
+
+
+
+div {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -55,11 +90,4 @@ li {
   input {
     margin-right: 10px;
   }
-}
-
-h2 {
-  text-align: center;
-  font-size: 24px;
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
