@@ -36,6 +36,25 @@
     }
   }
 
+  .file-path {
+    input[type = "text"] {
+      position: relative;
+      left: -35px;
+      width: 144px;
+
+      &:focus {
+        width: 166px;
+      }
+    }
+
+    .button {
+      position: relative;
+      bottom: 37px;
+      right: -83px;
+      margin: 0;
+    }
+  }
+
   h1 {
     text-align: center;
     font-size: 24px;
@@ -44,6 +63,7 @@
     color: $uploadTitlesColor;
     text-transform: uppercase;
     font-weight: 600;
+    pointer-events: none;
   }
 
   label {
@@ -53,41 +73,41 @@
   }
 }
 
-.info-chapter {
-  margin: 20px 0;
-}
-
-
-
-div {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-li {
-  margin: 8px;
-
-  a {
-    display: block;
-    padding: 8px;
-    //background-color: #dddddd;
-  }
-
-  a:hover {
-    background-color: #c5aed3;
+  .info-chapter {
+    margin: 20px 0;
   }
 
 
-  &:last-child {
-    border-right: none;
+
+  div {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 
-  label {
-    margin-right: 10px;
-  }
+  li {
+    margin: 8px;
 
-  input {
-    margin-right: 10px;
+    a {
+      display: block;
+      padding: 8px;
+      //background-color: #dddddd;
+    }
+
+    a:hover {
+      background-color: #c5aed3;
+    }
+
+
+    &:last-child {
+      border-right: none;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      margin-right: 10px;
+    }
   }
-}

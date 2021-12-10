@@ -64,6 +64,12 @@ li {
                $logoTextBorderColor -1px 1px 0,
                $logoTextBorderColor 1px -1px 0,
                $logoTextBorderColor 0 0 4px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .button {
@@ -76,4 +82,11 @@ li {
   padding: 55px;
 }
 
+.logo {
+  cursor: pointer;
+  transition: 0.25s;
 
+  &:hover {
+    transform: scale(1.1);
+  }
+}
