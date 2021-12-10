@@ -1,33 +1,41 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, map } from 'rxjs/operators';
 
-export interface Video2 {
-  name: string;
-  length: number;
-  video: string;
+export interface VideoLink {
+  codec: string;
+  link: string;
+}
+
+export class VideoInfo {
+  qualities: Map<string, VideoLink[]> = new Map();
+  name: string = "";
+  author: string | undefined;
+
+  static Clone(data: VideoInfo) {
+    const vidInfo = new VideoInfo();
+    vidInfo.name = data.name;
+    vidInfo.author = data.author;
+    vidInfo.qualities = new Map(Object.entries(data.qualities));
+    return vidInfo;
+  }
 }
 
 @Injectable()
-export class WatchService implements OnInit{
+export class WatchService{
 
-  watchVideosUrl = 'http://localhost:3000/';
-  userAgent: string | undefined;
+  watchVideosUrl = 'http://localhost:3000/?video=';
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    const userAgent = window.navigator.userAgent;
-    this.userAgent = userAgent;
-    console.log(this.userAgent);
-  }
-
   getVideos(videoID: string) {
-    return this.http.get<Video2[]>(this.watchVideosUrl)
+    const videoUrl = this.watchVideosUrl + videoID;
+    return this.http.get<VideoInfo>(videoUrl)
     .pipe(
+      map(data => VideoInfo.Clone(data)),
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
     );

@@ -10,6 +10,7 @@ import { GalleryService, GalleryVideo } from './gallery.service';
 export class GalleryComponent implements OnInit {
 
   videos: GalleryVideo[] | undefined;
+  thumbsPath: string = "http://127.0.0.1:5500/thumb/";
 
   constructor(private galleryService: GalleryService) {}
 
@@ -18,7 +19,6 @@ export class GalleryComponent implements OnInit {
       .subscribe(
         (data: GalleryVideo[]) => {
           this.videos = data;
-          console.log(this.videos);
         }
       );
   }
