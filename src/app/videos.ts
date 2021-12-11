@@ -7,19 +7,19 @@ export interface Video {
 
 export const videos = [
   {
-    id: 'w4897taac_2',
+    id: 'first',
     title: 'Cute puppies <3',
     duration: 122,
     thumbnail: 'Thumbnail pic'
   },
   {
-    id: 'htSA22k9r1S',
+    id: 'second',
     title: 'OMG! I CAN\'T BELIEVE',
     duration: 921,
     thumbnail: 'Thumbnail pic'
   },
   {
-    id: '1roiubr1111',
+    id: 'third',
     title: 'daily vlog #2',
     duration: 9003,
     thumbnail: 'Thumbnail pic'

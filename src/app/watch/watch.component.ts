@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Video, videos } from '../videos';
+import { WatchService, VideoInfo } from './watch.service';
 
 @Component({
   selector: 'app-watch',
@@ -9,12 +9,25 @@ import { Video, videos } from '../videos';
   styleUrls: ['./watch.component.scss'],
 })
 export class WatchComponent implements OnInit {
-  video: Video | undefined;
-  constructor(private route: ActivatedRoute) {}
+
+  video: VideoInfo | undefined;
+  videoPath: string = "http://127.0.0.1:5500/video/"
+  selectedQuality: any = '240';
+
+  constructor(
+    private route: ActivatedRoute,
+    private watchService: WatchService
+    ) {}
 
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const videoIdFromRoute = String(routeParams.get('videoId'));
-    this.video = videos.find((video) => video.id === videoIdFromRoute);
+    this.watchService.getVideos(videoIdFromRoute)
+      .subscribe(
+        (data: VideoInfo) => {
+          this.video = data;
+          console.log(this.video);
+        }
+      );
   }
 }

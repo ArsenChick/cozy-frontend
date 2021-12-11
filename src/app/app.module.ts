@@ -9,20 +9,30 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { WatchComponent } from './watch/watch.component';
 import { UploadComponent } from './upload/upload.component';
 
+import { GalleryService } from './gallery/gallery.service';
+import { WatchService } from './watch/watch.service';
+
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     TopBarComponent,
     WatchComponent,
-    UploadComponent
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [GalleryService, WatchService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

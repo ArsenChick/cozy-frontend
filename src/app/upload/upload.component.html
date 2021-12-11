@@ -9,10 +9,26 @@
   </div>
 
   <div>
-    <label for="file">
+    <label for="author">
+      Author Name
+    </label>
+    <input type="text" formControlName="author">
+  </div>
+
+  <input type="file" accept="video/*" class="file-input" name="videofile"
+       (change)="onFileSelected($event)" #fileUpload>
+
+  <div>
+    <label for="videofile">
       Video File
     </label>
-    <input type="text" formControlName="file">
-    </div>
+    {{ uploadForm.get('videofile')?.value.name || "No file uploaded yet." }}
+
+      <button mat-mini-fab color="primary" type="button"
+        (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+      </button>
+  </div>
+
   <button class="button" type="submit">Upload</button>
 </form>
