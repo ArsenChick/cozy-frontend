@@ -39,18 +39,18 @@
   .file-path {
     input[type = "text"] {
       position: relative;
-      left: -35px;
-      width: 144px;
+      left: -40px;
+      width: 160px;
 
       &:focus {
-        width: 166px;
+        width: 170px;
       }
     }
 
     .button {
       position: relative;
       bottom: 37px;
-      right: -83px;
+      right: -85px;
       margin: 0;
     }
   }
