@@ -1,0 +1,92 @@
+@import "../../values.scss";
+//@import "../../fonts.scss";
+
+/* Верхняя панель */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 1;
+  z-index: 100;
+
+  align-items: center;
+
+  margin: 20px 40px;
+  height: 70px;
+  overflow: hidden;
+  color: $logoTextColor;
+  background: $navColor;
+
+  /*
+  font-size: 11pt;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-weight: bold;
+  */
+  //position: relative;
+
+  border-bottom: 3px solid #9e90ba;
+  border-radius: 6px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $navColor;
+}
+
+li {
+  display: inline;
+  float: left;
+  //border-right: 1px solid #bbb;
+
+  a {
+    display: block;
+    padding: 8px;
+    //background-color: #dddddd;
+  }
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+#logoText {
+  font-size: 50px;
+  position: relative;
+  z-index: 100;
+  color: $logoTextColor;
+  text-shadow: $logoTextBorderColor 1px 1px 0,
+               $logoTextBorderColor -1px -1px 0,
+               $logoTextBorderColor -1px 1px 0,
+               $logoTextBorderColor 1px -1px 0,
+               $logoTextBorderColor 0 0 4px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.button {
+  display: flex;
+  margin: 25% 10px;
+  align-items: center;
+}
+
+.empty-space {
+  padding: 55px;
+}
+
+.logo {
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

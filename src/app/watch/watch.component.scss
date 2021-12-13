@@ -1,0 +1,23 @@
+@import "../../values.scss";
+
+.wrapper {
+  padding: 40px;
+}
+
+.video-grid {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+
+  .video-info {
+  }
+
+  .video-player {
+    height: 260px;
+    width: 450px;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    background: $videoFrameColor;
+  }
+}
+
