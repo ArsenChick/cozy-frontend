@@ -1,5 +1,6 @@
-<div *ngIf="video && video.qualities.size != 0; else novideo">
+<div class="wrapper" *ngIf="video && video.qualities.size != 0; else novideo">
   <p>{{ video.name }} by {{ video.author }}</p>
+
 
   <div *ngFor="let quality of video.qualities| keyvalue">
     <div *ngShow=""></div>
@@ -9,6 +10,8 @@
       <source *ngFor="let source of video.qualities.get(quality.key)"
         [src]="videoPath + source.link">
     </video>
+
+
   </div>
 </div>
 
