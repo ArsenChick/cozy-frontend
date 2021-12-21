@@ -8,6 +8,7 @@ body {
 .wrapper {
   margin: 0 40px;
   padding: 20px;
+  min-width: 400px;
   background: $contentBoxColor;
   border-radius: 6px;
 }
