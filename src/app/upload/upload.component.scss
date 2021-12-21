@@ -1,11 +1,5 @@
 @import "../../values.scss";
 
-.wrapper {
-  margin: 0 40px;
-  padding: 20px;
-  background: $contentBoxColor;
-  border-radius: 6px;
-}
 .upload-box {
   width: 400px;
   padding: 20px;
@@ -73,41 +67,45 @@
   }
 }
 
-  .info-chapter {
-    margin: 20px 0;
+.info-chapter {
+  margin: 20px 0;
+}
+
+
+
+div {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  margin: 8px;
+
+  a {
+    display: block;
+    padding: 8px;
+    //background-color: #dddddd;
+  }
+
+  a:hover {
+    background-color: #c5aed3;
   }
 
 
-
-  div {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  &:last-child {
+    border-right: none;
   }
 
-  li {
-    margin: 8px;
-
-    a {
-      display: block;
-      padding: 8px;
-      //background-color: #dddddd;
-    }
-
-    a:hover {
-      background-color: #c5aed3;
-    }
-
-
-    &:last-child {
-      border-right: none;
-    }
-
-    label {
-      margin-right: 10px;
-    }
-
-    input {
-      margin-right: 10px;
-    }
+  label {
+    margin-right: 10px;
   }
+
+  input {
+    margin-right: 10px;
+  }
+}
+
+.file-input {
+    display: none;
+}

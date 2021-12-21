@@ -20,12 +20,12 @@ var Helper = /** @class */ (function () {
     function Helper() {
         this.galleryVideos = [
             {
-                name: 'Xz',
+                name: 'Mi-mi-mi <3',
                 length: 20,
                 video: 'anNkCufW1_'
             },
             {
-                name: 'Xz2',
+                name: 'Pro gaming',
                 length: 22,
                 video: 'pbeuKzUUuF'
             },
@@ -94,12 +94,12 @@ var Helper = /** @class */ (function () {
         ]);
         var videoInfo1 = {
             qualities: videoQualities1,
-            name: 'Xz',
+            name: 'Mi-mi-mi <3',
             author: 'papich'
         };
         var videoInfo2 = {
             qualities: videoQualities2,
-            name: 'Xz2',
+            name: 'Pro gaming',
             author: 'papich'
         };
         this.videos = new Map();

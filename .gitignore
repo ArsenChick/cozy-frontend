@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/.vs/slnx.sqlite
+src/.vs/src/v16/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+src/.vs/VSWorkspaceState.json
+.vs/cozy-frontend/v16/.suo

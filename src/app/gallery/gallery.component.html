@@ -1,25 +1,24 @@
-<div class="wrapper grid-gallery">
-  <div *ngIf="videos; else novideos">
-    <div *ngFor="let video of videos" class="item-video">
+<div class="wrapper">
+  <div class="grid-gallery" *ngIf="videos; else novideos">
+    <ul *ngFor="let video of videos" class="item-video">
+      <li>
+        <a [routerLink]="['/watch', video.video]">
+          <img [width]="300"
+               [src]="thumbsPath + video.video + '.png'"></a>
+      </li>
 
-      <img [width]="300"
-           [src]="thumbsPath + video.video + '.png'">
-
-      <p>
-        Length {{ video.length * 1000 | date:'mm:ss' }}
-      </p>
-
-      <h3>
-        <a [title]="video.name" [routerLink]="['/watch', video.video]">
-          {{ video.name }}
-        </a>
-      </h3>
-
-    </div>
+      <li class="video-info">
+        <p id="duration">{{ video.length * 1000 | date:'mm:ss' }}</p>
+        <h3><a [title]="video.name" [routerLink]="['/watch', video.video]">
+            {{ video.name }}</a></h3>
+      </li>
+</ul>
   </div>
 </div>
-<div class="wrapper">
-  <ng-template #novideos>
+
+<ng-template #novideos>
+  <div class="wrapper">
     No videos yet!
-  </ng-template>
-</div>
+  </div>
+</ng-template>
+

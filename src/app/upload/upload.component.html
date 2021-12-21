@@ -1,37 +1,39 @@
-<div class="wrapper">
-  <form class="upload-box" [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
-    <h1>Video upload</h1>
-    <div class="info-chapter">
-      <label for="title">
-        Video Title
-      </label>
-      <input type="text" formControlName="title">
-    </div>
+<ul class="wrapper">
+  <li>
+    <form class="upload-box" [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+      <h1>Video upload</h1>
+      <div class="info-chapter">
+        <label for="title">
+          Video Title
+        </label>
+        <input type="text" formControlName="title">
+      </div>
 
-    <div class="info-chapter">
-      <label for="author">
-        Author Name
-      </label>
-      <input type="text" formControlName="author">
-    </div>
+      <div class="info-chapter">
+        <label for="author">
+          Author Name
+        </label>
+        <input type="text" formControlName="author">
+      </div>
 
-    <input type="file" accept="video/*" class="file-input" name="videofile"
-           (change)="onFileSelected($event)" #fileUpload>
+      <input type="file" accept="video/*" class="file-input" name="videofile"
+              (change)="onFileSelected($event)" #fileUpload>
 
-    <div class="info-chapter">
-      <label for="videofile">
-        Video File
-      </label>
-      {{ uploadForm.get('videofile')?.value.name || "No file uploaded yet." }}
+      <div class="info-chapter">
+        <label for="videofile">
+          Video File
+        </label>
+        {{ uploadForm.get('videofile')?.value.name || "No file uploaded yet." }}
 
-      <button mat-mini-fab color="primary" type="button"
-              (click)="fileUpload.click()">
-        <mat-icon>attach_file</mat-icon>
-      </button>
-    </div>
+        <button mat-mini-fab color="primary" type="button"
+                (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
 
-    <div class="info-chapter">
-      <button class="button" type="submit">Upload</button>
-    </div>
-  </form>
-</div>
+      <div class="info-chapter">
+        <button class="button" type="submit">Upload</button>
+      </div>
+    </form>
+  </li>
+</ul>

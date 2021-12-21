@@ -33,3 +33,20 @@
     //background: $videoFrameColor;
   }
 }
+
+.video-info {
+  #duration {
+    position: relative;
+    bottom: 20px;
+    left: 210px;
+    width: 80px;
+    border-radius: 3px;
+    padding: 1px 1px;
+    text-align: center;
+    outline: none;
+    pointer-events: none;
+    color: rgba(white, 0.75);
+    background: rgba($buttonDarkBackgroundColor, 0.75);
+    z-index: 100;
+  }
+}
