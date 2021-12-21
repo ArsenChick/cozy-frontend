@@ -2,32 +2,31 @@
 
 <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="title">
-      Video Title
-    </label>
-    <input type="text" formControlName="title">
+    <label for="title">Video Title</label>
+    <input type="text" [required]="true" formControlName="title">
+    <div *ngIf="uploadForm.get('title')?.touched
+      && !uploadForm.get('title')?.valid" class="valid-error">Required</div>
   </div>
 
   <div>
-    <label for="author">
-      Author Name
-    </label>
+    <label for="author">Author Name</label>
     <input type="text" formControlName="author">
   </div>
 
   <input type="file" accept="video/*" class="file-input" name="videofile"
-       (change)="onFileSelected($event)" #fileUpload>
+       (change)="onFileSelected($event)" [required]="true" #fileUpload>
 
   <div>
-    <label for="videofile">
-      Video File
-    </label>
+    <label for="videofile">Video File</label>
     {{ uploadForm.get('videofile')?.value.name || "No file uploaded yet." }}
 
       <button mat-mini-fab color="primary" type="button"
-        (click)="fileUpload.click()">
+        (click)="uploadForm.get('videofile')?.markAsTouched(); fileUpload.click()">
           <mat-icon>attach_file</mat-icon>
       </button>
+
+      <div *ngIf="uploadForm.get('videofile')?.touched
+        && !this.uploadForm.get('videofile')?.valid" class="valid-error">Required</div>
   </div>
 
   <button class="button" type="submit">Upload</button>

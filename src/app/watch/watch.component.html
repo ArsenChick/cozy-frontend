@@ -2,9 +2,12 @@
   <p>{{ video.name }} by {{ video.author }}</p>
 
   <div *ngFor="let quality of video.qualities| keyvalue">
-    <div *ngShow=""></div>
-    <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
+    <button type="button" name={{quality.key}} (click)="selectedQuality = quality.key">
+      {{quality.key}}
+    </button>
+  </div>
 
+  <div *ngFor="let quality of video.qualities| keyvalue">
     <video *ngIf="selectedQuality == quality.key" width="720" controls>
       <source *ngFor="let source of video.qualities.get(quality.key)"
         [src]="videoPath + source.link">
