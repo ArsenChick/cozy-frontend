@@ -1,24 +1,25 @@
 <div class="wrapper" *ngIf="video && video.qualities.size != 0; else novideo">
   <ul class="video-grid">
-    <li class="frame"></li>
+    <li>
+      <div class="frame"></div>
 
-    <li class="video-info">
-      <p>{{ video.name }} by {{ video.author }}</p>
-    </li>
-
-    <li class="quality-grid">
-      <p>Качество:</p>
-      <div *ngFor="let quality of video.qualities| keyvalue">
-        <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
+      <div class="quality-grid">
+        <p>Качество:</p>
+        <div *ngFor="let quality of video.qualities| keyvalue">
+          <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
+        </div>
       </div>
 
+      <div *ngFor="let quality of video.qualities| keyvalue">
+        <video *ngIf="selectedQuality == quality.key" width="720" controls>
+          <source *ngFor="let source of video.qualities.get(quality.key)"
+                  [src]="videoPath + source.link">
+        </video>
+      </div>
     </li>
 
-    <li *ngFor="let quality of video.qualities| keyvalue">
-      <video *ngIf="selectedQuality == quality.key" width="720" controls>
-        <source *ngFor="let source of video.qualities.get(quality.key)"
-                [src]="videoPath + source.link">
-      </video>
+    <li class="video-info">
+        <h2>{{ video.name }} </h2> <p> by {{ video.author }}</p>
     </li>
   </ul>
 </div>
@@ -29,8 +30,10 @@
   </div>
 </ng-template>
 
-<script >
+<!--
+<script>
   $(document).ready(function () {
     $(".wrapper .video-grid .quality-grid div button:first").focus();
   });
 </script>
+-->
