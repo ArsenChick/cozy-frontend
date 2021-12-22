@@ -49,6 +49,8 @@
     }
 
     .logo {
+      transition: 0.30s;
+
       &:hover {
         transition: 0.25s;
         transform: scale(1.04);
@@ -56,9 +58,9 @@
 
       #logoImg {
         cursor: pointer;
-        transition: 0.25s;
 
         &:hover {
+          transition: 0.25s;
           transform: scale(1.1);
         }
       }
@@ -70,9 +72,9 @@
         color: $logoTextColor;
         text-shadow: $logoTextBorderColor 1px 1px 0, $logoTextBorderColor -1px -1px 0, $logoTextBorderColor -1px 1px 0, $logoTextBorderColor 1px -1px 0, $logoTextBorderColor 0 0 4px;
         cursor: pointer;
-        transition: 0.25s;
 
         &:hover {
+          transition: 0.25s;
           transform: scale(1.1);
         }
       }
@@ -80,6 +82,7 @@
 
     .right-side {
       margin-left: 10px;
+
       .button {
         margin: 20% 10px;
         align-items: center;
@@ -97,7 +100,7 @@
 @media (max-width: 768px) {
   nav {
     height: 170px;
-    min-width: 250px;
+    min-width: $blockSize;
     padding: 15px 20px;
 
     ul {

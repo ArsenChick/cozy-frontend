@@ -8,7 +8,7 @@ body {
 .wrapper {
   margin: 0 40px;
   padding: 20px;
-  min-width: 400px;
+  min-width: $blockSize;
   background: $contentBoxColor;
   border-radius: 6px;
 }
@@ -20,10 +20,10 @@ body {
   padding: 6px 15px;
   text-align: center;
   outline: none;
-  transition: 0.25s;
   cursor: pointer;
   text-transform: capitalize;
   &:hover {
+    transition: 0.25s;
     background-color: #c5aed3;
   }
 }
