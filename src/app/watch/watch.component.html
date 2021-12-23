@@ -1,18 +1,37 @@
-<div *ngIf="video && video.qualities.size != 0; else novideo">
-  <p>{{ video.name }} by {{ video.author }}</p>
+<div class="wrapper" *ngIf="video && video.qualities.size != 0; else novideo">
+  <ul class="video-grid">
+    <li>
+      <div *ngFor="let quality of video.qualities| keyvalue">
+        <video *ngIf="selectedQuality == quality.key" width="720" controls>
+          <source *ngFor="let source of video.qualities.get(quality.key)"
+                  [src]="videoPath + source.link">
+        </video>
+      </div>
 
-  <div *ngFor="let quality of video.qualities| keyvalue">
-    <button type="button" name={{quality.key}} (click)="selectedQuality = quality.key">
-      {{quality.key}}
-    </button>
-  </div>
+      <div class="quality-grid">
+        <p>Quality:</p>
+        <div *ngFor="let quality of video.qualities| keyvalue">
+          <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
+        </div>
+      </div>
+    </li>
 
-  <div *ngFor="let quality of video.qualities| keyvalue">
-    <video *ngIf="selectedQuality == quality.key" width="720" controls>
-      <source *ngFor="let source of video.qualities.get(quality.key)"
-        [src]="videoPath + source.link">
-    </video>
-  </div>
+    <li class="video-info">
+        <h2>{{ video.name }} </h2> <p> by {{ video.author }}</p>
+    </li>
+  </ul>
 </div>
 
-<ng-template #novideo>No video with such id!</ng-template>
+<ng-template #novideo>
+  <div class="wrapper">
+    No video with such id!
+  </div>
+</ng-template>
+
+<!--
+<script>
+  $(document).ready(function () {
+    $(".wrapper .video-grid .quality-grid div button:first").focus();
+  });
+</script>
+-->

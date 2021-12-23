@@ -1,0 +1,112 @@
+@import "../../values.scss";
+
+@media all and (max-width: 1920px) {
+  .video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .frame {
+      div {
+        width: 720px;
+        height: 400px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+      }
+      //border: 3px dashed #9e90ba;
+    }
+
+    .video-info {
+      flex-basis: auto;
+      pointer-events: none;
+
+      h2 {
+        //text-align: center;
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: $uploadTitlesColor;
+        font-weight: 600;
+        pointer-events: none;
+      }
+    }
+
+    video {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-right: 30px;
+    }
+  }
+
+  .quality-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 30px 0;
+    max-height: 30px;
+
+    p {
+      margin-right: 10px;
+      text-align: center;
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    button {
+      flex-basis: 60px;
+      width: 60px;
+      color: black;
+      background: $buttonLightBackgroundColor;
+      border-radius: 3px;
+      margin-right: 10px;
+      padding: 1px 15px;
+      text-align: center;
+      font-size: 14px;
+      outline: none;
+      transition: 0.25s;
+      cursor: pointer;
+
+      &:hover {
+        color: black;
+        background-color: $buttonNormalBackgroundColor;
+      }
+
+      &:focus {
+        color: $buttonFontColor;
+        background-color: #9e90ba;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .video-grid {
+    video {
+      min-width: 300px;
+      width: 78%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    video {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      transition: 0.25s;
+    }
+  }
+}
+
+
+
+
+
