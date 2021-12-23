@@ -1,0 +1,79 @@
+@import "../../values.scss";
+
+@media all and (max-width: 1920px) {
+  .grid-gallery {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($blockSize, $blockSize));
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    justify-content: center;
+
+    .item-video {
+      width: $blockSize;
+      text-align: center;
+
+      .thumbnail {
+        img {
+          transition: 0.25s;
+        }
+      }
+
+      .video-info {
+        h3 {
+          margin-top: 0;
+          font-size: 15px;
+          transition: 0.25s;
+          font-weight: 400;
+        }
+
+        .duration {
+          position: relative;
+          left: 65%;
+          bottom: 25px;
+          width: 80px;
+          border-radius: 3px;
+          padding: 1px 1px;
+          margin: 0;
+          text-align: center;
+          pointer-events: none;
+          color: rgba(white, 0.75);
+          background: rgba($buttonDarkBackgroundColor, 0.75);
+          z-index: 70;
+          transition: 0.25s;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px 0;
+
+    .grid-gallery {
+      grid-template-columns: repeat(1, $blockSize);
+      justify-content: center;
+
+      .item-video {
+        .thumbnail {
+          img {
+            width: $blockSize;
+          }
+        }
+
+        .video-info {
+          h3 {
+            font-size: 20px;
+          }
+
+          .duration {
+            left: 73%;
+            bottom: 29px;
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}
