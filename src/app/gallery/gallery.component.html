@@ -2,7 +2,8 @@
   <div *ngFor="let video of videos">
 
     <img [width]="300"
-      [src]="thumbsPath + video.video + '.png'">
+      [src]="thumbsPath + video.video + '.png'"
+      [alt]="video.video">
 
     <p>
       Length {{ video.length * 1000 | date:'mm:ss' }}
