@@ -6,7 +6,9 @@
         <label for="title">
           Video Title
         </label>
-        <input type="text" formControlName="title">
+        <input type="text" [required]="true" formControlName="title">
+        <div *ngIf="uploadForm.get('title')?.touched
+          && !uploadForm.get('title')?.valid" class="valid-error">Required</div>
       </div>
 
       <div class="info-chapter">
@@ -18,6 +20,7 @@
 
       <input type="file" accept="video/*" class="file-input" name="videofile"
               (change)="onFileSelected($event)" #fileUpload>
+      
 
       <div class="info-chapter">
         <label for="videofile">
@@ -26,9 +29,11 @@
         {{ uploadForm.get('videofile')?.value.name || "No file uploaded yet." }}
 
         <button mat-mini-fab color="primary" type="button"
-                (click)="fileUpload.click()">
+            (click)="uploadForm.get('videofile')?.markAsTouched(); fileUpload.click()">
           <mat-icon>attach_file</mat-icon>
         </button>
+        <div *ngIf="uploadForm.get('videofile')?.touched
+          && !this.uploadForm.get('videofile')?.valid" class="valid-error">Required</div>
       </div>
 
       <div class="info-chapter">

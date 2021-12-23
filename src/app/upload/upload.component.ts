@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
@@ -9,11 +9,12 @@ import { FormBuilder } from '@angular/forms';
 })
 export class UploadComponent {
 
+  uploadUrl = "http://localhost:3000";
   fileToUpload = '';
   uploadForm = this.formBuilder.group({
-    title: '',
+    title: ['', Validators.required],
     author: '',
-    videofile: ''
+    videofile: ['', Validators.required]
   });
 
   constructor(
@@ -22,7 +23,6 @@ export class UploadComponent {
     ) { }
 
   onFileSelected(event: any) {
-
     const file: File = event.target.files[0];
 
     if (file) {
@@ -34,17 +34,20 @@ export class UploadComponent {
   }
 
   onSubmit(): void {
-    const formData = this.uploadForm.value;
-    console.warn('Your video object is ready', formData);
+    this.uploadForm.markAllAsTouched();
+    if (this.uploadForm.dirty && this.uploadForm.valid) {
+      const formData = this.uploadForm.value;
+      console.warn('Your video object is ready', formData);
 
-    const formulario = new FormData();
-    Object.keys(formData).forEach((key) => {
-      formulario.append(key, formData[key]);
-    });
+      const formulario = new FormData();
+      Object.keys(formData).forEach((key) => {
+        formulario.append(key, formData[key]);
+      });
 
-    const upl = this.http.post("http://localhost:3000", formulario);
-    upl.subscribe(error => {
-      console.log(error);
-    });
+      const upl = this.http.post(this.uploadUrl, formulario);
+      upl.subscribe(error => {
+        console.log(error);
+      });
+    }
   }
 }

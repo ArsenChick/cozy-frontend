@@ -9,7 +9,7 @@
       </div>
 
       <div class="quality-grid">
-        <p>Качество:</p>
+        <p>Quality:</p>
         <div *ngFor="let quality of video.qualities| keyvalue">
           <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
         </div>
