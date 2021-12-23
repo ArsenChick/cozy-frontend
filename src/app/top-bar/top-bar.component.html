@@ -1,7 +1,21 @@
-<a [routerLink]="['/']">
-    <h1>Cozy</h1>
-  </a>
-  
-  <a routerLink="/upload" class="button fancy-button">
-    Upload
-  </a>
+<nav>
+  <ul id="topbar">
+      <li class="logo">
+        <a [routerLink]="['/']">
+          <img id="logoImg" src="../../assets/img/Cozy_logo.svg" height="50" width="50" alt="Cozy logo" title="logo">
+        </a>
+        <a [routerLink]="['/']">
+          <h1 id="logoText">Cozy</h1>
+        </a>
+      </li>
+
+      <li class="right-side">
+        <a routerLink="/upload" class="button fancy-button active">
+          Upload
+        </a>
+      <li>
+  </ul>
+</nav>
+
+<div class="empty-space">
+</div>

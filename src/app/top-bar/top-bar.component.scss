@@ -1,0 +1,139 @@
+@import "../../values.scss";
+
+@media all and (max-width: 1920px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 100;
+    align-items: center;
+    margin: 20px 40px;
+    padding: 10px 20px;
+    height: 70px;
+    overflow: hidden;
+    color: $logoTextColor;
+    background: $navColor;
+    border-bottom: 3px solid #9e90ba;
+    border-radius: 6px;
+
+    ul {
+      margin: 0;
+      background-color: $navColor;
+      align-items: center;
+
+      li {
+        display: inline;
+        float: left;
+        //border-right: 1px solid #bbb;
+
+        a {
+          display: inline;
+          float: left;
+          //background-color: #dddddd;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    .logo {
+      transition: 0.30s;
+
+      &:hover {
+        transition: 0.25s;
+        transform: scale(1.04);
+      }
+
+      #logoImg {
+        cursor: pointer;
+
+        &:hover {
+          transition: 0.25s;
+          transform: scale(1.1);
+        }
+      }
+
+      #logoText {
+        font-size: 50px;
+        position: relative;
+        z-index: 100;
+        color: $logoTextColor;
+        text-shadow: $logoTextBorderColor 1px 1px 0, $logoTextBorderColor -1px -1px 0, $logoTextBorderColor -1px 1px 0, $logoTextBorderColor 1px -1px 0, $logoTextBorderColor 0 0 4px;
+        cursor: pointer;
+
+        &:hover {
+          transition: 0.25s;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .right-side {
+      margin-left: 10px;
+
+      .button {
+        margin: 20% 10px;
+        align-items: center;
+      }
+    }
+  }
+
+  .empty-space {
+    padding-top: 110px;
+  }
+ }
+
+@media (max-width: 768px) {
+  nav {
+    height: 170px;
+    min-width: $blockSize;
+    padding: 15px 20px;
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      text-align: center;
+
+      .logo {
+        margin: 10px auto;
+
+        #logoImg {
+          transform: scale(1.4);
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+
+        #logoText {
+          position: relative;
+          left: 10px;
+          bottom: 15px;
+          font-size: 77px;
+        }
+      }
+
+      .right-side {
+        float: right;
+
+        .button {
+          margin: 0 10%;
+          width: 80%;
+          height: 40px;
+          padding: 9px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .empty-space {
+    padding-top: 210px;
+  }
+}
+
+

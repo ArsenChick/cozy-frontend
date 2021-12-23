@@ -19,7 +19,6 @@ export class GalleryComponent implements OnInit {
       .subscribe(
         (data: GalleryVideo[]) => {
           this.videos = data;
-        }
-      );
+        });
   }
 }
