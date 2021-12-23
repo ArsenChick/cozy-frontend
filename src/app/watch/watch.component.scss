@@ -36,6 +36,7 @@
       top: 0;
       left: 0;
       margin-right: 30px;
+      transition: 0.25s;
     }
   }
 
@@ -90,18 +91,7 @@
   .video-grid {
     video {
       min-width: 300px;
-      width: 78%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .video-grid {
-    video {
-      position: relative;
-      top: 0px;
-      left: 0px;
-      transition: 0.25s;
+      width: 85%;
     }
   }
 }
