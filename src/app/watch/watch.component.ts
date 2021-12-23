@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { WatchService, VideoInfo } from './watch.service';
 
-import { Helper } from '../videos';
-
 @Component({
   selector: 'app-watch',
   templateUrl: './watch.component.html',
@@ -13,7 +11,7 @@ import { Helper } from '../videos';
 export class WatchComponent implements OnInit {
 
   video: VideoInfo | undefined;
-  videoPath: string = "http://webphp.com/Cozy/video/"
+  videoPath: string = "http://127.0.0.1:5500/video/"
   selectedQuality: any = '240';
 
   constructor(
@@ -24,9 +22,6 @@ export class WatchComponent implements OnInit {
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const videoIdFromRoute = String(routeParams.get('videoId'));
-    const helper = new Helper();
-    this.video = helper.videos.get(videoIdFromRoute);
-    /*
     this.watchService.getVideos(videoIdFromRoute)
       .subscribe(
         (data: VideoInfo) => {
@@ -34,6 +29,5 @@ export class WatchComponent implements OnInit {
           console.log(this.video);
         }
       );
-    */
   }
 }

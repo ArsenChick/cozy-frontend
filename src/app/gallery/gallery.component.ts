@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { GalleryService, GalleryVideo } from './gallery.service';
 
-import { Helper } from '../videos';
-
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -12,20 +10,15 @@ import { Helper } from '../videos';
 export class GalleryComponent implements OnInit {
 
   videos: GalleryVideo[] | undefined;
-  thumbsPath: string = "http://webphp.com/Cozy/thumb/";
+  thumbsPath: string = "http://127.0.0.1:5500/thumb/";
 
   constructor(private galleryService: GalleryService) {}
 
   ngOnInit(): void {
-    const helper = new Helper();
-    this.videos = helper.galleryVideos;
-    /*
     this.galleryService.getVideos()
       .subscribe(
         (data: GalleryVideo[]) => {
           this.videos = data;
-        }
-      );
-    */
+        });
   }
 }
