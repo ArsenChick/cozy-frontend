@@ -4,7 +4,7 @@
       <div class="thumbnail">
         <a [routerLink]="['/watch', video.video]">
           <img [width]="300"
-               [src]="thumbsPath + video.video + '.png'"></a>
+               [src]="thumbsPath + video.video + '.png'" alt="video video"></a>
       </div>
       <div class="video-info">
         <p class="duration">{{ video.length * 1000 | date:'mm:ss' }}</p>
@@ -20,4 +20,3 @@
     No videos yet!
   </div>
 </ng-template>
-

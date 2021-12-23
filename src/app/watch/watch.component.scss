@@ -1,21 +1,21 @@
 @import "../../values.scss";
 
 @media all and (max-width: 1920px) {
-
-
   .video-grid {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 
     .frame {
-      width: 720px;
-      height: 400px;
-      margin-right: 30px;
-      margin-bottom: 20px;
+      div {
+        width: 720px;
+        height: 400px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+      }
       //border: 3px dashed #9e90ba;
     }
-    
+
     .video-info {
       flex-basis: auto;
       pointer-events: none;
@@ -32,9 +32,10 @@
     }
 
     video {
-      position: absolute;
-      top: 130px;
-      left: 60px;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-right: 30px;
     }
   }
 
@@ -85,39 +86,21 @@
   }
 }
 
-
 @media (max-width: 870px) {
   .video-grid {
-
-    .frame {
-      min-width: 400px;
-      width: 100%;
-      height: 400px;
-
-    }
-
     video {
-
       min-width: 300px;
       width: 78%;
     }
   }
 }
 
-
 @media (max-width: 768px) {
   .video-grid {
-
-    .frame {
-      width: $blockSize;
-      height: 225px;
-
-    }
-
     video {
-      position: absolute;
-      top: 230px;
-      left: minmax(20px, 10%);
+      position: relative;
+      top: 0px;
+      left: 0px;
       transition: 0.25s;
     }
   }

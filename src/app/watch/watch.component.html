@@ -1,20 +1,18 @@
 <div class="wrapper" *ngIf="video && video.qualities.size != 0; else novideo">
   <ul class="video-grid">
     <li>
-      <div class="frame"></div>
+      <div *ngFor="let quality of video.qualities| keyvalue">
+        <video *ngIf="selectedQuality == quality.key" width="720" controls>
+          <source *ngFor="let source of video.qualities.get(quality.key)"
+                  [src]="videoPath + source.link">
+        </video>
+      </div>
 
       <div class="quality-grid">
         <p>Качество:</p>
         <div *ngFor="let quality of video.qualities| keyvalue">
           <button type="button" (click)="selectedQuality = quality.key">{{quality.key}}</button>
         </div>
-      </div>
-
-      <div *ngFor="let quality of video.qualities| keyvalue">
-        <video *ngIf="selectedQuality == quality.key" width="720" controls>
-          <source *ngFor="let source of video.qualities.get(quality.key)"
-                  [src]="videoPath + source.link">
-        </video>
       </div>
     </li>
 
