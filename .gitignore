@@ -51,3 +51,8 @@ src/.vs/src/v16/.suo
 src/.vs/VSWorkspaceState.json
 .vs/cozy-frontend/v16/.suo
 .vs/VSWorkspaceState.json
+
+.idea
+.vs
+.vscode
+.angular
