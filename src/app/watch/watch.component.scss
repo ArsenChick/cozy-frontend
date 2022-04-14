@@ -5,19 +5,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-  }
+    }
 
-  .video-info {
-    flex-basis: auto;
-    pointer-events: none;
-
-    h2 {
-      //text-align: center;
-      font-size: 24px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      color: $uploadTitlesColor;
-      font-weight: 600;
+    .video-info {
+      flex-basis: auto;
       pointer-events: none;
     }
   }
@@ -85,3 +76,4 @@
     }
   }
 }
+
